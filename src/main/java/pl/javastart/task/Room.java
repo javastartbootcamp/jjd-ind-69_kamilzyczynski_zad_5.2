@@ -34,6 +34,7 @@ public class Room {
             temperature = lowerLimitTemperature;
         }
     }
+
     boolean reduceTemperature() {
         checkTemperature();
         if (isAirConditioned) {
