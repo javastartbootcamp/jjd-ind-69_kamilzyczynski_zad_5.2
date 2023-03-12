@@ -6,6 +6,13 @@ public class Room {
     private boolean isAirConditioned;
     private double lowerLimitTemperature;
 
+    public Room(double area, double temperature, boolean isAirConditioned, double lowerLimitTemperature) {
+        this.area = area;
+        this.temperature = temperature;
+        this.isAirConditioned = isAirConditioned;
+        this.lowerLimitTemperature = lowerLimitTemperature;
+    }
+
     public double getArea() {
         return area;
     }
@@ -22,25 +29,11 @@ public class Room {
         return lowerLimitTemperature;
     }
 
-    public Room(double area, double temperature, boolean isAirConditioned, double lowerLimitTemperature) {
-        this.area = area;
-        this.temperature = temperature;
-        this.isAirConditioned = isAirConditioned;
-        this.lowerLimitTemperature = lowerLimitTemperature;
-    }
-
-    private void checkTemperature() {
-        if (temperature < lowerLimitTemperature && isAirConditioned) {
-            temperature = lowerLimitTemperature;
-        }
-    }
-
     boolean reduceTemperature() {
-        checkTemperature();
         if (isAirConditioned) {
             if ((temperature - 1) <= lowerLimitTemperature) {
                 temperature = lowerLimitTemperature;
-                return false;
+                return true;
             } else if (temperature > lowerLimitTemperature) {
                 temperature--;
                 return true;

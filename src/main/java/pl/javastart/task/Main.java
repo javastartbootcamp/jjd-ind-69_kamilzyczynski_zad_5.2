@@ -5,8 +5,9 @@ public class Main {
         Room room1 = new Room(13.5, 15.5, true, 21);
         room1.reduceTemperature();
 
-        Room room2 = new Room(8.5, 21, false, 22);
-        room2.reduceTemperature();
+        Room room2 = new Room(8.5, 22.5, false, 22);
+        boolean b = room2.reduceTemperature();
+        System.out.println(b);
 
         System.out.println("Pokój nr 1:");
         System.out.println("Powierzchnia pokoju: " + room1.getArea());
